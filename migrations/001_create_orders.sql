@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS orders (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    customer TEXT NOT NULL,
+    status TEXT NOT NULL DEFAULT 'open',
+    discount_pence INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS order_lines (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    order_id INTEGER NOT NULL REFERENCES orders (id),
+    sku TEXT NOT NULL,
+    quantity INTEGER NOT NULL,
+    unit_price_pence INTEGER NOT NULL
+);
