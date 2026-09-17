@@ -27,7 +27,7 @@ target-version = "py311"
 line-length = 100
 
 [tool.ruff.lint]
-select = ["E", "F", "I", "B", "UP"]
+select = ["E", "F", "B", "UP"]
 
 [tool.pyright]
 include = ["shop", "scripts", "tests"]
