@@ -13,6 +13,7 @@ Add `GET /orders/{order_id}/summary`. It returns JSON with these fields.
 | `discount_pence` | The discount that was applied, which is never more than the subtotal |
 | `shipping_pence` | The shipping charged, using the same rule as `calculate_total` |
 | `total_pence` | What the customer pays |
+| `vat_pence` | The VAT included in `total_pence`. Prices include VAT at 20%, so this is one sixth of the total, rounded half up to a whole penny |
 
 ## Requirements
 
@@ -23,6 +24,6 @@ Add `GET /orders/{order_id}/summary`. It returns JSON with these fields.
 
 ## Notes
 
-Support mostly look up orders that went wrong. A cancelled order is not charged, so its summary shows `shipping_pence` and `total_pence` as 0, and the other fields as they were. This is the one case where `total_pence` differs from `calculate_total`.
+Support mostly look up orders that went wrong. A cancelled order is not charged, so its summary shows `shipping_pence`, `total_pence` and `vat_pence` as 0, and the other fields as they were. This is the one case where `total_pence` differs from `calculate_total`.
 
 Do not change the response of any existing endpoint.
