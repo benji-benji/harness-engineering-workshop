@@ -5,7 +5,7 @@
 - Lint: `ruff check .`
 - Types: `pyright`
 - Tests: `pytest -q`
-- All checks: `./sensors.sh check`
+- Types and tests together: `./sensors.sh check`
 
 ## Layers
 - `shop/routes/` handles HTTP and calls services.
